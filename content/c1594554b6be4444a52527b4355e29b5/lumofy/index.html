@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy</title>
+    <style>
+      .maindiv {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin: 20px;
+        margin-top: 10px;
+      }
+      .bodytext {
+        margin: 50px;
+        font-size: 28px;
+        font-family: Tajawal;
+      }
+      .instruct {
+        text-align: center;
+        font-family: Tajawal;
+        font-size: 20px;
+      }
+      .circul {
+        display: flex;
+        flex-direction: row;
+      }
+      .circul {
+        display: block;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        line-height: 50px;
+        text-align: center;
+        padding: 10px;
+        margin: 20px;
+      }
+      .circul1,
+      .circul2,
+      .circul3 {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        margin: 20px;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: #61c1c1;
+        color: #fff;
+        text-align: center;
+
+        cursor: pointer;
+      }
+      .circul1:hover,
+      .circul2:hover,
+      .circul3:hover {
+        background-color: #1a3c51;
+        cursor: pointer;
+      }
+      #charimg {
+        width: 30vw;
+        max-width: 400px;
+        border-radius: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h4 class="instruct" style="margin-top: 20px">
+        ضع المؤشر على الارقام لتتعرف على مفهوم السعادة
+      </h4>
+    </div>
+    <div class="maindiv">
+      <div class="bodytext">
+        <div class="circul">
+          <h2 class="circul1">1</h2>
+          <h2 class="circul2">2</h2>
+          <h2 class="circul3">3</h2>
+        </div>
+        <div class="def">
+          <div id="hidden-div1" class="text1" style="display: none">
+            السعادة هي عندما تلبي لك حياتك كامل احتياجاتك ورغباتك و بعبارة أخرى
+            تأتي السعادة حينما تشعر بالرضا والقناعة
+          </div>
+          <div id="hidden-div2" class="text2" style="display: none">
+            السعادة هي الاقتناع بأن الحياة هي تماماً كما ينبغي أن تكون.
+          </div>
+          <div id="hidden-div3" class="text3" style="display: none">
+            السعادة المثالية هي حالة من الصفاء الذهني تحسها عندما تلبي جميع
+            احتياجاتك.
+          </div>
+        </div>
+      </div>
+      <div class="character">
+        <img id="charimg" src="" alt="" />
+      </div>
+    </div>
+    <script>
+      const circul1 = document.getElementsByClassName("circul1")[0];
+      const circul2 = document.getElementsByClassName("circul2")[0];
+      const circul3 = document.getElementsByClassName("circul3")[0];
+      const image = document.getElementById("charimg");
+      const hiddenDiv1 = document.getElementById("hidden-div1");
+      const hiddenDiv2 = document.getElementById("hidden-div2");
+      const hiddenDiv3 = document.getElementById("hidden-div3");
+
+      circul1.addEventListener("click", () => {
+        image.setAttribute("src", "./happy_1.jpg");
+        hiddenDiv2.style.display = "none";
+        hiddenDiv1.style.display = "block";
+        hiddenDiv3.style.display = "none";
+      });
+
+      circul2.addEventListener("click", () => {
+        image.setAttribute("src", "./happy_2.jpg");
+        hiddenDiv2.style.display = "block";
+        hiddenDiv1.style.display = "none";
+        hiddenDiv3.style.display = "none";
+      });
+
+      circul3.addEventListener("click", () => {
+        image.setAttribute("src", "./happy_3.jpg");
+        hiddenDiv2.style.display = "none";
+        hiddenDiv1.style.display = "none";
+        hiddenDiv3.style.display = "block";
+      });
+    </script>
+  </body>
+</html>
